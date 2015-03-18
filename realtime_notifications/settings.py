@@ -37,7 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rn',
+    'realtime_notifications.rn',
 )
 
 MIDDLEWARE_CLASSES = (

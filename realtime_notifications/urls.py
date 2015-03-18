@@ -1,10 +1,13 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
-urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'realtime_notifications.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
+import notifications
 
-    url(r'^admin/', include(admin.site.urls)),
-)
+
+urlpatterns = patterns('',
+                       url(r'^admin/', include(admin.site.urls)),
+                       url(r'^inbox/notifications/',
+                           include(notifications.urls)),
+                       url(r'', include(
+                           'user_sessions.urls', 'user_sessions')),
+                       )
